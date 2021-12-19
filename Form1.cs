@@ -5,7 +5,7 @@ namespace Bonus
         char[] ch ;
         public Form1()
         {
-            ch  = new char[] { '*', '+', '-' };
+            ch  = new char[] { '*', '+', '-' , '÷' , '%' };
             InitializeComponent();
         }
         private void Calc()
@@ -39,47 +39,61 @@ namespace Bonus
                 L_IO.Text = (num1 - num2).ToString()+ UncalculatedEq;
             else if (op == '*')
                 L_IO.Text = (num1 * num2).ToString()+ UncalculatedEq;
+            else if(op == '%')
+                L_IO.Text = (num1 % num2).ToString() + UncalculatedEq;
+            else if (op == '÷')
+                L_IO.Text = (num1 / num2).ToString() + UncalculatedEq;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             L_IO.Text += "1";
+            button14.Focus();
         }
         private void button2_Click(object sender, EventArgs e)
         {
             L_IO.Text += "2";
+            button14.Focus();
         }
         private void button3_Click(object sender, EventArgs e)
         {
             L_IO.Text += "3";
+            button14.Focus();
         }
         private void button6_Click(object sender, EventArgs e)
         {
             L_IO.Text += "4";
+            button14.Focus();
         }
         private void button5_Click(object sender, EventArgs e)
         {
             L_IO.Text += "5";
+            button14.Focus();
         }
         private void button4_Click(object sender, EventArgs e)
         {
             L_IO.Text += "6";
+            button14.Focus();
         }
         private void button9_Click(object sender, EventArgs e)
         {
             L_IO.Text += "7";
+            button14.Focus();
         }
         private void button8_Click(object sender, EventArgs e)
         {
             L_IO.Text += "8";
+            button14.Focus();
         }
         private void button7_Click(object sender, EventArgs e)
         {
             L_IO.Text += "9";
+            button14.Focus();
         }
         private void button10_Click(object sender, EventArgs e)
         {
             L_IO.Text += "0";
+            button14.Focus();
         }
         private void button13_Click(object sender, EventArgs e)
         {
@@ -87,6 +101,7 @@ namespace Bonus
             if (L_IO.Text != "")
                 if ( ! ch.Contains(L_IO.Text[L_IO.Text.Length - 1]) )
                     L_IO.Text += "+";
+            button14.Focus();
         }
         private void button12_Click(object sender, EventArgs e)
         {
@@ -94,6 +109,7 @@ namespace Bonus
             if (L_IO.Text != "")
                 if (!ch.Contains(L_IO.Text[L_IO.Text.Length - 1]))
                     L_IO.Text += "-";
+            button14.Focus();
         }
         private void button11_Click(object sender, EventArgs e)
         {            
@@ -101,6 +117,22 @@ namespace Bonus
             if(L_IO.Text != "")
                 if (!ch.Contains(L_IO.Text[L_IO.Text.Length - 1]))
                     L_IO.Text += "*";
+            button14.Focus();
+        }
+        private void button18_Click(object sender, EventArgs e)
+        {
+            if (L_IO.Text != "")
+                if (!ch.Contains(L_IO.Text[L_IO.Text.Length - 1]))
+                    L_IO.Text += "%";
+            button14.Focus();
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            if (L_IO.Text != "")
+                if (!ch.Contains(L_IO.Text[L_IO.Text.Length - 1]))
+                    L_IO.Text += "÷";
+            button14.Focus();
         }
         // Equal
         private void button14_Click(object sender, EventArgs e)
@@ -115,6 +147,7 @@ namespace Bonus
         {
             if(L_IO.Text != "")
                 L_IO.Text = L_IO.Text.Substring(0, L_IO.Text.Length - 1);
+            button14.Focus();
         }
 
         private void button16_Click(object sender, EventArgs e)
@@ -124,6 +157,7 @@ namespace Bonus
             {
                 L_IO.Text += '.';
             }
+            button14.Focus();
         }
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -178,7 +212,23 @@ namespace Bonus
                 case '=':
                     button14.PerformClick();
                     break;
+                case '/':
+                    button17.PerformClick();
+                    break;
+                case '%':
+                    button18.PerformClick();
+                    break;
+                case '.':
+                    button16.PerformClick();
+                    break;
+                    
             }
+        }
+
+        private void button19_Click(object sender, EventArgs e)
+        {
+            L_IO.Text = "";
+            button14.Focus();
         }
 
 
