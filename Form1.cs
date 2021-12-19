@@ -10,7 +10,7 @@ namespace Bonus
         }
         private void Calc()
         {
-            int num1, num2;
+            double num1, num2;
             String UncalculatedEq = "",FullEx = L_IO.Text;
             
             char op;
@@ -20,16 +20,16 @@ namespace Bonus
             // Get Index Type
             op = FullEx[OpInd];
             // SubString To get Each Number
-            num1 = int.Parse(FullEx.Substring(0, OpInd));
+            num1 = double.Parse(FullEx.Substring(0, OpInd));
             // If We have more Than One Operator So we Take Only the Left Side Op
             if (FullEx.Substring(OpInd + 1).IndexOfAny(ch) == -1)
                 // No more Operators
-                num2 = int.Parse(FullEx.Substring(OpInd + 1));
+                num2 = double.Parse(FullEx.Substring(OpInd + 1));
             else
             // Extract Num2 as the First Number From the Left
             {
                 OpInd2 = FullEx.Substring(OpInd + 1).IndexOfAny(ch);
-                num2 = int.Parse(FullEx.Substring(OpInd + 1, OpInd2));
+                num2 = double.Parse(FullEx.Substring(OpInd + 1, OpInd2));
                 UncalculatedEq = FullEx.Substring(OpInd + OpInd2 + 1);
             }
 
@@ -84,27 +84,31 @@ namespace Bonus
         private void button13_Click(object sender, EventArgs e)
         {
             // If the Last Character is not an operator
-            if( ! ch.Contains(L_IO.Text[L_IO.Text.Length - 1]) )
-                L_IO.Text += "+";
+            if (L_IO.Text != "")
+                if ( ! ch.Contains(L_IO.Text[L_IO.Text.Length - 1]) )
+                    L_IO.Text += "+";
         }
         private void button12_Click(object sender, EventArgs e)
         {
             // If the Last Character is not an operator
-            if (!ch.Contains(L_IO.Text[L_IO.Text.Length - 1]))
-                L_IO.Text += "-";
+            if (L_IO.Text != "")
+                if (!ch.Contains(L_IO.Text[L_IO.Text.Length - 1]))
+                    L_IO.Text += "-";
         }
         private void button11_Click(object sender, EventArgs e)
         {            
             // If the Last Character is not an operator
-            if (!ch.Contains(L_IO.Text[L_IO.Text.Length - 1]))
-                L_IO.Text += "*";
+            if(L_IO.Text != "")
+                if (!ch.Contains(L_IO.Text[L_IO.Text.Length - 1]))
+                    L_IO.Text += "*";
         }
         // Equal
         private void button14_Click(object sender, EventArgs e)
         {
             // Check if we Have an Operator 
-            if(L_IO.Text.IndexOfAny(ch) != -1)
-                Calc();
+            if (L_IO.Text != "")
+                if (L_IO.Text.IndexOfAny(ch) != -1)
+                    Calc();
         }
 
         private void button15_Click(object sender, EventArgs e)
@@ -113,6 +117,14 @@ namespace Bonus
                 L_IO.Text = L_IO.Text.Substring(0, L_IO.Text.Length - 1);
         }
 
+        private void button16_Click(object sender, EventArgs e)
+        {
+            // Check if last Char is a Number
+            if (Char.IsNumber(L_IO.Text[L_IO.Text.Length - 1]))
+            {
+                L_IO.Text += '.';
+            }
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
             this.KeyPreview = true;
@@ -168,5 +180,7 @@ namespace Bonus
                     break;
             }
         }
+
+
     }
 }

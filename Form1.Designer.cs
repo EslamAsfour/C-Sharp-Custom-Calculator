@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button16 = new System.Windows.Forms.Button();
             this.button15 = new System.Windows.Forms.Button();
             this.L_IO = new System.Windows.Forms.Label();
             this.button14 = new System.Windows.Forms.Button();
@@ -50,6 +51,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button16);
             this.groupBox1.Controls.Add(this.button15);
             this.groupBox1.Controls.Add(this.L_IO);
             this.groupBox1.Controls.Add(this.button14);
@@ -71,6 +73,19 @@
             this.groupBox1.Size = new System.Drawing.Size(336, 327);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // button16
+            // 
+            this.button16.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button16.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button16.Font = new System.Drawing.Font("Cooper Black", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button16.Location = new System.Drawing.Point(22, 255);
+            this.button16.Name = "button16";
+            this.button16.Size = new System.Drawing.Size(57, 52);
+            this.button16.TabIndex = 15;
+            this.button16.Text = ".";
+            this.button16.UseVisualStyleBackColor = false;
+            this.button16.Click += new System.EventHandler(this.button16_Click);
             // 
             // button15
             // 
@@ -314,5 +329,6 @@
         private Button button14;
         private Label L_IO;
         private Button button15;
+        private Button button16;
     }
 }
