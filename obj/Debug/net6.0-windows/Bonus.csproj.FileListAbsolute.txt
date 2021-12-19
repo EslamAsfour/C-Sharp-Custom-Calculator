@@ -15,3 +15,4 @@ E:\BI Dev ITI\4- C#_Intro\Day 8\SolBonus\Bonus\obj\Debug\net6.0-windows\Bonus.dl
 E:\BI Dev ITI\4- C#_Intro\Day 8\SolBonus\Bonus\obj\Debug\net6.0-windows\ref\Bonus.dll
 E:\BI Dev ITI\4- C#_Intro\Day 8\SolBonus\Bonus\obj\Debug\net6.0-windows\Bonus.pdb
 E:\BI Dev ITI\4- C#_Intro\Day 8\SolBonus\Bonus\obj\Debug\net6.0-windows\Bonus.genruntimeconfig.cache
+E:\BI Dev ITI\4- C#_Intro\Day 8\SolBonus\Bonus\obj\Debug\net6.0-windows\Bonus.csproj.AssemblyReference.cache
